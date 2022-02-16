@@ -45,8 +45,9 @@ typedef struct s_data
 /********* UTILS *****************************/
 void    perror_exit(unsigned int err);
 char	*get_next_line(int fd);
-void    **ft_realloc(void **tab, size_t new_size);
-
+char    **ft_realloc(char **tab, size_t new_size);
+void    print_map(char **tab);
+char    **ft_read(int fd);
 /************ MLX ****************************/
 int    init_mlx(t_mlx *m, int size_x, int size_y, char *name);
 #endif

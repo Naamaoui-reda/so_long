@@ -5,18 +5,28 @@ void perror_exit(unsigned int err)
     perror("Error");
     exit(err);
 }
-void    **ft_realloc(void **tab, size_t new_size)
+char    **ft_realloc(char **tab, size_t new_size)
 {
-    void    **new_tab;
+    char    **new_tab;
 
-    new_tab = (void *)malloc (sizeof(void *) * (new_size + 1));
+    if (tab == NULL || new_size < 0)
+        return (NULL);
+    new_tab = (char **)malloc (sizeof(char *) * (new_size));
     if (!new_tab)
     {
         perror("Error");
         exit (1);
     }
-    ft_memcpy(new_tab,tab,new_size);
+    ft_memcpy(new_tab, tab, new_size * sizeof(char *));
     free (tab);
-    return(new_tab);
+    return (new_tab);
 }
 
+void    print_map(char **tab)
+{
+    int i=0;
+    while (tab[i])
+    {
+        printf("%s",tab[i++]);
+    }
+}

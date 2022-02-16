@@ -29,19 +29,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t size)
 	}
 	return (buffer);
 }
-// #include<string.h>
-// #include<stdio.h>
-// int main()
-// {
-// 	//int t[3]= {1, -12, 3};
-// 	char *s = "1\20023";
-// 	//int r[3];
-// 	//int *p=r;
-// 	char *d;
-
-// 	//r = ft_memcpy(r, t, 7);
-// 	ft_memcpy(d,s,2);
-// 	printf("%u\n",d[1]);
-// 	// printf("--%d*/%d-%d\n",r[0],r[1],r[2]);
-// 	// printf("--%d*/%d-%d",p[0],p[1],p[2]);
-// }

@@ -15,7 +15,7 @@ LIBFT = libft/libft.a
 
 MAKE_LIBFT = libft/
 
-SRC = utils1.c init_mlx.c get_next_line.c
+SRC = utils1.c init_mlx.c get_next_line.c parse.c
 
 
 SRC_OBJ = ${SRC:%c=%o} 
@@ -24,7 +24,7 @@ SRC_OBJ = ${SRC:%c=%o}
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
 MLX_FLAGS =  -lmlx -framework OpenGL -framework AppKit
 
