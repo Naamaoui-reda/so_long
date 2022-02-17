@@ -46,9 +46,14 @@ typedef struct s_data
 void    perror_exit(unsigned int err);
 char	*get_next_line(int fd);
 char    **ft_realloc(char **tab, size_t new_size);
+/******** MAP ***********************/
 void    print_map(char **tab);
 char    **ft_read(int fd);
 size_t  ft_strlen_map(char *s);
+void	ft_check_lines_of_map(char **tab);
+void	ft_check_borders(char **tab);
+void  ft_check(char **tab);
+void    free_map(char **tab);
 /************ MLX ****************************/
 int    init_mlx(t_mlx *m, int size_x, int size_y, char *name);
 #endif

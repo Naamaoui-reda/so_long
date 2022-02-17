@@ -52,9 +52,9 @@ int main()
     s = ft_read(fd);
     if (s == NULL)
         return (1);
-    print_map(s);
-    printf ("%c\n", s[3][6]);
-    // s = get_next_line(fd);
+    
+    ft_check(s);
+    print_map(s);// s = get_next_line(fd);
     // printf("%s\n",s);
 //     if(init_mlx(&mlx_struct, 1024, 1024,"test"))
 //         exit(0); // to_do free map

@@ -31,26 +31,15 @@ void    print_map(char **tab)
 	}
 }
 
-int	ft_check_lines_of_map(char **tab)
+void    free_map(char **tab)
 {
-	int	i;
-	int	size;
+	int i;
 
-	i = 1;
-	size = ft_strlen_map(tab[0]);
+	i = 0;
 	while (tab[i])
 	{
-		if (size != ft_strlen_map(tab[i++]))
-		{
-			write(1, "Erroe\n", 6);
-			exit(1);
-		}
-		i++;
+		free (tab[i++]);
 	}
-	return(0);
+	free(tab);
 }
 
-int	ft_check_borers(char **tab)
-{
-	
-}

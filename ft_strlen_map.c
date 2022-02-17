@@ -6,8 +6,8 @@ size_t  ft_strlen_map(char *s)
 	
 	i = 0;
 	if (s == NULL)
-		perror ("INVALIDE MAP")
-	while (s[i] != '\n' || s[i])
+		perror ("INVALIDE MAP");
+	while (s[i] != '\n' && s[i])
 		i++;
 	return (i);
 }

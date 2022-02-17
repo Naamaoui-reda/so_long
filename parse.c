@@ -23,11 +23,3 @@ char **ft_read(int fd)
     }
     return (NULL);
 }
-
-int   ft_check(char **tab)
-{
-    int //cheack size of lines
-    //check borders
-    // at least one exit , one p,at least one c
-
-}
