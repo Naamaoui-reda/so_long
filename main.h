@@ -48,6 +48,7 @@ char	*get_next_line(int fd);
 char    **ft_realloc(char **tab, size_t new_size);
 void    print_map(char **tab);
 char    **ft_read(int fd);
+size_t  ft_strlen_map(char *s);
 /************ MLX ****************************/
 int    init_mlx(t_mlx *m, int size_x, int size_y, char *name);
 #endif
