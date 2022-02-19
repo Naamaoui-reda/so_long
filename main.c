@@ -45,17 +45,20 @@ int main()
     char **s;
     t_mlx mlx_struct;
     t_data data;
+    t_map   ta;
     
    
-
+    ta.collectible = 0;
+    ta.size_of_map_h = 0;
+    ta.size_of_map_v=0;
     fd = open("map.ber",O_RDONLY);
     s = ft_read(fd);
     if (s == NULL)
         return (1);
     
-    ft_check(s);
-    print_map(s);// s = get_next_line(fd);
-    //printf("%s\n",s);
+    ft_check(s,&ta);
+    //print_map(s);// s = get_next_line(fd);
+    printf("\n----%d----h%d-----v%d------p.x%d-----p.y%d\n",ta.collectible,ta.size_of_map_h,ta.size_of_map_v,ta.position.x,ta.position.y);
     if(init_mlx(&mlx_struct, 1024, 1024,"test"))
         exit(0); // to_do free map
     data.m = mlx_struct;

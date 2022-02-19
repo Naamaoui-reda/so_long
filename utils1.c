@@ -43,3 +43,12 @@ void    free_map(char **tab)
 	free(tab);
 }
 
+int	ft_tab_size(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while(tab[i])
+		i++;
+	return (i);
+}

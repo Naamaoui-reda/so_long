@@ -49,10 +49,58 @@ void	ft_check_borders(char **tab)
     else
         printf("errr");
 }
-void  ft_check(char **tab)
+void	ft_check_player(char **tab,t_map *ma)
+{
+	int i;
+	int j;
+
+	i = 0;
+
+	while (tab[i])
+	{
+		j = 0;
+		while (tab[i][j])
+		{
+			if (tab[i][j]== 'P')
+			{
+				(ma->position).x = i;
+				(ma->position).y = j;
+
+			}
+			j++;
+		}
+		i++;
+	}
+}
+void	ft_collectb(char **tab,t_map *ma)
+{	
+	int i;
+	int j;
+	ma->size_of_map_v = ft_tab_size(tab);
+	ma->size_of_map_h = ft_strlen_map(tab[0]);
+	ma->collectible = 0;
+
+	i = 1;
+	while (tab[i])
+	{
+		j = 0;
+		while (tab[i][j])
+		{
+			if (tab[i][j]== 'C')
+			{
+				ma->collectible += 1;
+			}
+			j++;
+		}
+		i++;
+	}
+	
+}
+void  ft_check(char **tab,t_map *t)
 {
     ft_check_lines_of_map(tab);//cheack size of lines
     ft_check_borders(tab);    //check borders
-    // at least one exit , one p,at least one c
+   ft_collectb(tab,t); // at least one exit , one p,at least one c
+   ft_check_player(tab,t);
 
 }
