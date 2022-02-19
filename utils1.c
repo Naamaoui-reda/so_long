@@ -52,3 +52,25 @@ int	ft_tab_size(char **tab)
 		i++;
 	return (i);
 }
+void	ft_check_for_outsiders(char **tab)
+{
+	int i;
+	int j;
+
+	i = 0;
+
+	while (tab[i])
+	{
+		j = 0;
+		while (tab[i][j])
+		{
+			if (tab[i][j]!= 'P' && tab[i][j]!= 'E' && tab[i][j]!= 'C' && tab[i][j]!= '1' && tab[i][j] != '0' && tab[i][j] != '\n')
+			{
+				write(1,"Error: Map Invalid",18);
+				exit(-1);
+			}
+			j++;
+		}
+		i++;
+	}
+}

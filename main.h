@@ -61,6 +61,7 @@ char	*get_next_line(int fd);
 char    **ft_realloc(char **tab, size_t new_size);
 int	    ft_tab_size(char **tab);
 void	ft_check_player(char **tab,t_map *ma);
+void	ft_check_for_outsiders(char **tab);
 /******** MAP ***********************/
 void    print_map(char **tab);
 char    **ft_read(int fd);

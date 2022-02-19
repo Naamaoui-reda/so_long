@@ -98,6 +98,7 @@ void	ft_collectb(char **tab,t_map *ma)
 }
 void  ft_check(char **tab,t_map *t)
 {
+	ft_check_for_outsiders(tab);
     ft_check_lines_of_map(tab);//cheack size of lines
     ft_check_borders(tab);    //check borders
    ft_collectb(tab,t); // at least one exit , one p,at least one c
