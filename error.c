@@ -61,7 +61,8 @@ void	ft_check_player(char **tab,t_map *ma)
 	int j;
 
 	i = 0;
-
+	ma->size_of_map_v = ft_tab_size(tab);
+	ma->size_of_map_h = ft_strlen_map(tab[0]);
 	while (tab[i])
 	{
 		j = 0;
@@ -73,6 +74,10 @@ void	ft_check_player(char **tab,t_map *ma)
 				(ma->position).y = j;
 
 			}
+			else if (tab[i][j]== 'C')
+				ma->collectible += 1;
+			else if (tab[i][j]== 'E')
+				
 			j++;
 		}
 		i++;
