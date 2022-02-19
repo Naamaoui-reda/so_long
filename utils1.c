@@ -66,7 +66,7 @@ void	ft_check_for_outsiders(char **tab)
 		{
 			if (tab[i][j]!= 'P' && tab[i][j]!= 'E' && tab[i][j]!= 'C' && tab[i][j]!= '1' && tab[i][j] != '0' && tab[i][j] != '\n')
 			{
-				write(1,"Error: Map Invalid",18);
+				write(1,"Error:\nMap Invalid there is an outsider",39);
 				exit(-1);
 			}
 			j++;

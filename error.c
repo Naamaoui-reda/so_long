@@ -16,6 +16,12 @@ void 	ft_check_lines_of_map(char **tab)
 		}
 		i++;
 	}
+	if (ft_strlen(tab[i-1]) != size)
+	{
+			write(1, "lent-Error\n", 11);
+			free_map(tab);
+			exit(1);
+	}
 	printf("success\n");
 }
 
