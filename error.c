@@ -77,7 +77,7 @@ void	ft_check_player(char **tab,t_map *ma)
 			else if (tab[i][j]== 'C')
 				ma->collectible += 1;
 			else if (tab[i][j]== 'E')
-				
+				ma->ex = true;
 			j++;
 		}
 		i++;

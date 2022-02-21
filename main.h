@@ -7,6 +7,7 @@
 #include<math.h>
 #include<mlx.h>
 #include<fcntl.h>
+#include<stdbool.h>
 #include "./libft/libft.h"
 
 #define ESC 53
@@ -53,8 +54,8 @@ typedef struct s_map
     int size_of_map_v;
     int size_of_map_h;
     t_point position;
+    bool ex;
 }t_map;
-
 
 /********* UTILS *****************************/
 void    perror_exit(unsigned int err);
