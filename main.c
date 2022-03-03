@@ -47,7 +47,11 @@ int main()
     t_data data;
     t_map   ta;
     
-   
+    ta.collectible  = 0;
+    ta.size_of_map_h = 0;
+    ta.size_of_map_v = 0;
+    ta.position.x = 0;
+    ta.position.y = 0;
     ta.collectible = 0;
     ta.size_of_map_h = 0;
     ta.size_of_map_v=0;
@@ -58,7 +62,12 @@ int main()
     
     ft_check(s,&ta);
     //print_map(s);// s = get_next_line(fd);
-    printf("\n----%d----h%d-----v%d------p.x%d-----p.y%d\n",ta.collectible,ta.size_of_map_h,ta.size_of_map_v,ta.position.x,ta.position.y);
+    printf("collect :: %d\nH :: %d\nW :: %d\nplayer x :: %d\nplayer y :: %d\n"
+    ,ta.collectible,
+    ta.size_of_map_h,
+    ta.size_of_map_v
+    ,ta.position.x,
+    ta.position.y);
     if(init_mlx(&mlx_struct, 1024, 1024,"test"))
         exit(0); // to_do free map
     data.m = mlx_struct;
