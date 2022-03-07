@@ -1,10 +1,11 @@
 #include"main.h"
 
-void perror_exit(unsigned int err)
+void	perror_exit(unsigned int err)
 {
 	perror("Error");
 	exit(err);
 }
+
 char    **ft_realloc(char **tab, size_t new_size)
 {
 	char    **new_tab;
@@ -26,9 +27,7 @@ void    print_map(char **tab)
 {
 	int i=0;
 	while (tab[i])
-	{
 		printf("%s",tab[i++]);
-	}
 }
 
 void    free_map(char **tab)
@@ -37,9 +36,7 @@ void    free_map(char **tab)
 
 	i = 0;
 	while (tab[i])
-	{
 		free (tab[i++]);
-	}
 	free(tab);
 }
 
@@ -52,6 +49,7 @@ int	ft_tab_size(char **tab)
 		i++;
 	return (i);
 }
+
 void	ft_check_for_outsiders(char **tab)
 {
 	int i;
@@ -64,7 +62,8 @@ void	ft_check_for_outsiders(char **tab)
 		j = 0;
 		while (tab[i][j])
 		{
-			if (tab[i][j]!= 'P' && tab[i][j]!= 'E' && tab[i][j]!= 'C' && tab[i][j]!= '1' && tab[i][j] != '0' && tab[i][j] != '\n')
+			if (tab[i][j]!= 'P' && tab[i][j]!= 'E' && tab[i][j]!= 'C'
+				&& tab[i][j]!= '1' && tab[i][j] != '0' && tab[i][j] != '\n')
 			{
 				write(1,"Error:\nMap Invalid there is an outsider",39);
 				exit(1);
