@@ -29,9 +29,14 @@ typedef struct s_mlx
 
 typedef struct s_assests
 {
+    t_mlx   data;
     img player;
     int p_x;
     int p_y;
+    img exit;
+    img groud;
+    img wall;
+    img collect;
 
 }t_assests;
 
