@@ -39,8 +39,8 @@ int key_hook(int keycode, void *param)
 
 int main()
 {
-    int x;
-    int y;
+    //int x;
+    //int y;
     int fd;
     char **s;
     t_mlx mlx_struct;
@@ -55,6 +55,8 @@ int main()
     ta.collectible = 0;
     ta.size_of_map_h = 0;
     ta.size_of_map_v=0;
+    t_assests info;
+
     fd = open("map.ber",O_RDONLY);
     s = ft_read(fd);
     if (s == NULL)
@@ -62,20 +64,18 @@ int main()
     
     ft_check(s,&ta);
     //print_map(s);// s = get_next_line(fd);
-    printf("collect :: %d\nH :: %d\nW :: %d\nplayer x :: %d\nplayer y :: %d\n"
-    ,ta.collectible,
-    ta.size_of_map_h,
-    ta.size_of_map_v
-    ,ta.position.x,
-    ta.position.y);
+    // printf("collect :: %d\nH :: %d\nW :: %d\nplayer x :: %d\nplayer y :: %d\n"
+    // ,ta.collectible,
+    // ta.size_of_map_h,
+    // ta.size_of_map_v
+    // ,ta.position.x,
+    // ta.position.y);
     if(init_mlx(&mlx_struct, 1024, 1024,"test"))
         exit(0); // to_do free map
     data.m = mlx_struct;
-    data.a.player = mlx_xpm_file_to_image(mlx_struct.mlx_ptr, "free-1x.xpm", &x, &y);
-    data.a.p_x=x;
-    data.a.p_y=y;
-   mlx_key_hook (mlx_struct.win_ptr, key_hook, &data); printf("%d--%d\n",x,y);
-    mlx_put_image_to_window(mlx_struct.mlx_ptr,mlx_struct.win_ptr,data.a.player,data.a.p_x,data.a.p_y);
+  
+   mlx_key_hook (mlx_struct.win_ptr, key_hook, &data);
+    ft_draw_map(data.a,s);
     mlx_loop (mlx_struct.mlx_ptr);
     
-}
+} 
