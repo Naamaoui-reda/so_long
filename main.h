@@ -15,7 +15,7 @@
 #define A 0
 #define S 1
 #define D 2
-#define SIZE 25
+#define SIZE 30
 //add bool for exit
 typedef void* mlx;
 typedef void* mlx_win;

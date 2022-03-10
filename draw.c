@@ -1,6 +1,5 @@
 #include "main.h"
 
-<<<<<<< HEAD
 void    ft_draw_asseste(t_assests info,char type, int x, int y)
 {
     int w;
@@ -41,9 +40,4 @@ void    ft_draw_map(t_assests info, char **map)
     }
     printf ("there\n");
 
-=======
-void    ft_draw_map(t_assests *info, t_mlx )
-{
-	
->>>>>>> 1856018cf2e0da4aa091a689b20a8000ac9ceeef
 }
