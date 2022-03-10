@@ -38,11 +38,7 @@ typedef struct s_assests
     img groud;
     img wall;
     img collect;
-<<<<<<< HEAD
     t_mlx m;
-=======
->>>>>>> 1856018cf2e0da4aa091a689b20a8000ac9ceeef
-
 }t_assests;
 
 typedef struct s_data
