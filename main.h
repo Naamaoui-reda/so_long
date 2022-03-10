@@ -30,6 +30,7 @@ typedef struct s_mlx
 
 typedef struct s_assests
 {
+    t_mlx   data;
     img player;
     int p_x;
     int p_y;
@@ -37,7 +38,10 @@ typedef struct s_assests
     img groud;
     img wall;
     img collect;
+<<<<<<< HEAD
     t_mlx m;
+=======
+>>>>>>> 1856018cf2e0da4aa091a689b20a8000ac9ceeef
 
 }t_assests;
 
