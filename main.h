@@ -15,7 +15,7 @@
 #define A 0
 #define S 1
 #define D 2
-#define SIZE 16
+#define SIZE 25
 //add bool for exit
 typedef void* mlx;
 typedef void* mlx_win;
@@ -30,7 +30,6 @@ typedef struct s_mlx
 
 typedef struct s_assests
 {
-    t_mlx   data;
     img player;
     int p_x;
     int p_y;
@@ -38,12 +37,12 @@ typedef struct s_assests
     img groud;
     img wall;
     img collect;
+    t_mlx m;
 
 }t_assests;
 
 typedef struct s_data
 {
-    t_mlx m;
     t_assests a;
 
 }t_data;
@@ -71,7 +70,7 @@ int	    ft_tab_size(char **tab);
 void	ft_check_player(char **tab,t_map *ma);
 void	ft_check_for_outsiders(char **tab);
 /******** MAP ***********************/
-void    print_map(char **tab);
+int    *print_map(char **tab);
 char    **ft_read(int fd);
 size_t  ft_strlen_map(char *s);
 void	ft_check_lines_of_map(char **tab);
@@ -84,8 +83,9 @@ void	draw_wall(t_assests info,int x, int y);
 void	draw_player(t_assests info,int x, int y);
 void	draw_collect(t_assests info,int x, int y);
 void	draw_exit(t_assests info,int x, int y);
-void    ft_draw_asseste(t_assests info,char **map, int x, int y);
+void    ft_draw_asseste(t_assests info,char type, int x, int y);
 void    ft_draw_map(t_assests info,char **map);
+void	init_assests(t_assests *info);
 /************ MLX ****************************/
 int    init_mlx(t_mlx *m, int size_x, int size_y, char *name);
 #endif

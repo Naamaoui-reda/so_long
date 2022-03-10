@@ -1,39 +1,43 @@
 #include "main.h"
 
-void    ft_draw_asseste(t_assests info,char **map, int x, int y)
+void    ft_draw_asseste(t_assests info,char type, int x, int y)
 {
     int w;
     int h;
 
     w = x * SIZE;
     h = y * SIZE;
-    if (map[y][x] == '1')
+    if (type == '1')
         draw_wall(info,w,h);
-    if (map[y][x] == 'P')
+    if (type == 'P')
         draw_player(info,w,h);
-    if (map[y][x] == 'C')
+    if (type == 'C')
         draw_collect(info,w,h);
-    if (map[y][x] == '0')
+    if (type == '0')
         draw_ground(info,w,h);
-    if (map[y][x] == 'E')
+    if (type == 'E')
         draw_exit(info,w,h);
 }
-void    ft_draw_map(t_assests info,char **map)
+void    ft_draw_map(t_assests info, char **map)
 {
     int x;
     int y;
     
+    print_map(map);
     x = 0;
     y = 0;
-    mlx_clear_window(info.data.mlx_ptr,info.data.win_ptr);
+    mlx_clear_window(info.m.mlx_ptr,info.m.win_ptr);
+    printf ("here\n");
     while(map[y])
     {
         while (map[y][x] && map[y][x] != '\n')
         {
-            ft_draw_asseste(info,map,x,y);
+            ft_draw_asseste(info,map[y][x],x,y);
             x++;
         }
         x = 0;
         y++;
     }
+    printf ("there\n");
+
 }

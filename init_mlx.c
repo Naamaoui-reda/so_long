@@ -15,7 +15,24 @@ int    init_mlx(t_mlx *m, int size_x, int size_y, char *name)
 	}
 	return (0);
 }
-int	init_assests(t_assests info)
+void	init_assests(t_assests *info)
 {
-	
+	int x;
+	int	y;
+	void	*mlx_ptr;
+
+	mlx_ptr = info->m.mlx_ptr;
+	info->collect = mlx_xpm_file_to_image(mlx_ptr,"./xpm/coll.xpm",&x,&y);
+	printf ("cool--%d -- %d\n",x,y);
+	info->groud = mlx_xpm_file_to_image(mlx_ptr,"./xpm/back.xpm",&x,&y);
+		printf ("gr--%d -- %d\n",x,y);
+	info->player = mlx_xpm_file_to_image(mlx_ptr,"./xpm/player.xpm",&x,&y);
+		printf ("pla--%d -- %d\n",x,y);
+
+	info->wall = mlx_xpm_file_to_image(mlx_ptr,"./xpm/wall.xpm",&x,&y);
+		printf ("wall--%d -- %d\n",x,y);
+
+	info->exit = mlx_xpm_file_to_image(mlx_ptr,"./xpm/exit.xpm",&x, &y);
+		printf ("exit--%d -- %d\n",x,y);
+
 }
