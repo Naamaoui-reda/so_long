@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnaamaou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/11 20:44:15 by rnaamaou          #+#    #+#             */
+/*   Updated: 2022/03/11 20:44:16 by rnaamaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
 // int key_hook(int keycode, void *param)
@@ -39,40 +51,40 @@
 
 int main()
 {
-    //int x;
-    //int y;
-    int fd;
-    char **s;
-    t_mlx mlx_struct;
-    t_assests data;
-    t_map   ta;
-    
-    ta.collectible  = 0;
-    ta.size_of_map_h = 0;
-    ta.size_of_map_v = 0;
-    ta.position.x = 0;
-    ta.position.y = 0;
-    ta.collectible = 0;
-    ta.size_of_map_h = 0;
-    ta.size_of_map_v=0;
-    t_assests info;
-    int *t;
+	//int x;
+	//int y;
+	int fd;
+	char **s;
+	t_mlx mlx_struct;
+	t_assests data;
+	t_map   ta;
+	
+	ta.collectible  = 0;
+	ta.size_of_map_h = 0;
+	ta.size_of_map_v = 0;
+	ta.position.x = 0;
+	ta.position.y = 0;
+	ta.collectible = 0;
+	ta.size_of_map_h = 0;
+	ta.size_of_map_v=0;
+	t_assests info;
+	int *t;
 
-    fd = open("map.ber",O_RDONLY);
-    s = ft_read(fd);
-    if (s == NULL)
-        return (1);
-    
-    ft_check(s,&ta);
-    t = print_map(s);
-    if(init_mlx(&mlx_struct, ta.size_of_map_v*SIZE,ta.size_of_map_h*SIZE,"test"))
-        exit(0); // to_do free map
-     data.m= mlx_struct;
-    printf ("init a\n");
-    init_assests(&data);
+	fd = open("map.ber",O_RDONLY);
+	s = ft_read(fd);
+	if (s == NULL)
+		return (1);
+	
+	ft_check(s,&ta);
+	t = print_map(s);
+	if(init_mlx(&mlx_struct, ta.size_of_map_v*SIZE,ta.size_of_map_h*SIZE,"test"))
+		exit(0); // to_do free map
+	 data.m= mlx_struct;
+	printf ("init a\n");
+	init_assests(&data);
 //    mlx_key_hook (mlx_struct.win_ptr, key_hook, &data);
-       printf ("init d\n");
-    ft_draw_map(data, s);
-    mlx_loop (mlx_struct.mlx_ptr);
-    
+	   printf ("init d\n");
+	ft_draw_map(data, s);
+	mlx_loop (mlx_struct.mlx_ptr);
+	
 } 

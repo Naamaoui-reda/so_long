@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils1.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnaamaou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/11 20:44:38 by rnaamaou          #+#    #+#             */
+/*   Updated: 2022/03/11 20:44:39 by rnaamaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"main.h"
 
 void	perror_exit(unsigned int err)
@@ -70,11 +82,33 @@ void	ft_check_for_outsiders(char **tab)
 			if (tab[i][j]!= 'P' && tab[i][j]!= 'E' && tab[i][j]!= 'C'
 				&& tab[i][j]!= '1' && tab[i][j] != '0' && tab[i][j] != '\n')
 			{
-				write(1,"Error:\nMap Invalid there is an outsider",39);
+				write(2, "Error:\nMap Invalid there is an outsider",39);
 				exit(1);
 			}
 			j++;
 		}
 		i++;
 	}
+}
+
+void	write_err_lent(char **tab, int i)
+{
+	if (i == 1)
+	{
+		write (2, "lent error\n",11);
+		free_map (tab);
+		exit (1);
+	}
+	if (i == 2)
+	{
+		write (2, "Error\n", 6);
+		write (2, "borders-Erroe\n", 14);
+		free_map(tab);
+		exit(1);
+	}
+	if (i == 3)
+	{
+		
+	}
+
 }

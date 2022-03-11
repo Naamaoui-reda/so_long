@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnaamaou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/11 20:44:22 by rnaamaou          #+#    #+#             */
+/*   Updated: 2022/03/11 20:44:23 by rnaamaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -23,43 +35,43 @@ typedef void* img;
 
 typedef struct s_mlx
 {
-    mlx mlx_ptr;
-    mlx_win win_ptr;
+	mlx mlx_ptr;
+	mlx_win win_ptr;
 
 }t_mlx;
 
 typedef struct s_assests
 {
-    t_mlx   data;
-    img player;
-    int p_x;
-    int p_y;
-    img exit;
-    img groud;
-    img wall;
-    img collect;
-    t_mlx m;
+	t_mlx   data;
+	img player;
+	int p_x;
+	int p_y;
+	img exit;
+	img groud;
+	img wall;
+	img collect;
+	t_mlx m;
 }t_assests;
 
 typedef struct s_data
 {
-    t_assests a;
+	t_assests a;
 
 }t_data;
 typedef struct s_point
 {
-    int x;
-    int y;
+	int x;
+	int y;
 }t_point;
 
 
 typedef struct s_map
 {
-    int collectible;
-    int size_of_map_v;
-    int size_of_map_h;
-    t_point position;
-    bool ex;
+	int collectible;
+	int size_of_map_v;
+	int size_of_map_h;
+	t_point position;
+	bool ex;
 }t_map;
 
 /********* UTILS *****************************/
@@ -77,6 +89,7 @@ void	ft_check_lines_of_map(char **tab);
 void	ft_check_borders(char **tab);
 void  ft_check(char **tab,t_map *t);
 void    free_map(char **tab);
+void	write_err_lent(char **tab, int i);
 /************   DRAW    *************/
 void    draw_ground(t_assests info, int x, int y);
 void	draw_wall(t_assests info,int x, int y);
