@@ -13,6 +13,7 @@
 #include "main.h"
 
 #define BUFFER_SIZE 1
+
 static void	ft_get_line(int fd, char **line)
 {
 	int		bytes;
