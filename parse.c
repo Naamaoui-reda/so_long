@@ -29,7 +29,6 @@ char	**ft_read(int fd)
 	while (1337)
 	{
 		tab [i] = get_next_line(fd);
-		printf("%s %d\n", tab[i], i);
 		if (tab[i++] == NULL)
 			return (tab);
 		tab = ft_realloc(tab, i + 1);

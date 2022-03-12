@@ -35,21 +35,6 @@ char	**ft_realloc(char **tab, size_t new_size)
 	return (new_tab);
 }
 
-// int	*print_map(char **tab)
-// {
-// 	int	i;
-// 	int	*t;
-
-// 	i = 0;
-// 	t = NULL;
-// 	t = malloc(2 * sizeof(int));
-// 	while (tab[i])
-// 		printf("%s",tab[i++]);
-// 	t[0] = ft_strlen_map(tab[0]);
-// 	t[1] = i;
-// 	return (t);
-// }
-
 void	free_map(char **tab)
 {
 	int	i;

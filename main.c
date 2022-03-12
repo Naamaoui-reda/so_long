@@ -67,8 +67,8 @@ int main()
 	ta.collectible = 0;
 	ta.size_of_map_h = 0;
 	ta.size_of_map_v=0;
-	t_assests info;
-	int *t;
+	//t_assests info;
+	//int *t;
 
 	fd = open("map.ber",O_RDONLY);
 	s = ft_read(fd);
