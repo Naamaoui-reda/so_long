@@ -108,7 +108,10 @@ void	write_err_lent(char **tab, int i)
 	}
 	if (i == 3)
 	{
-		
+        write (2, "Error\n", 6);
+		write(2, "the map need one player and one player only\n", 44);
+        free_map(tab);
+		exit(1);
 	}
 
 }

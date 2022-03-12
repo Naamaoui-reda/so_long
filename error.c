@@ -70,8 +70,7 @@ void	ft_check_player(char **tab, t_map *ma)
 
 	i = 0;
 	tmp = 0;
-	ma->size_of_map_h = ft_tab_size(tab);
-	ma->size_of_map_v = ft_strlen_map(tab[0]);
+	init_position(ma, 0, 0, tab);
 	while (tab[i])
 	{
 		j = 0;
@@ -80,8 +79,7 @@ void	ft_check_player(char **tab, t_map *ma)
 			if (tab[i][j] == 'P')
 			{
 				tmp++;
-				(ma->position).x = j;
-				(ma->position).y = i;
+				init_position(ma, i, j, tab);
 			}
 			else if (tab[i][j] == 'C')
 				ma->collectible++;
@@ -93,8 +91,7 @@ void	ft_check_player(char **tab, t_map *ma)
 	}
 	if (tmp != 1)
 	{
-		write(2, "the map need one player and one player only\n", 44);
-		exit(1);
+		write_err_lent(tab, 3);
 	}
 }
 
@@ -120,13 +117,21 @@ void	ft_check_player(char **tab, t_map *ma)
 // 		}
 // 		i++;
 // 	}
-	
 // }
-void  ft_check(char **tab, t_map *t)
+
+void	init_position(t_map *map, int i, int j, char **tab)
+{
+	map->size_of_map_h = ft_tab_size(tab);
+	map->size_of_map_v = ft_strlen_map(tab[0]);
+	(map->position).x = j;
+	(map->position).y = i;
+}
+
+void	ft_check(char **tab, t_map *t)
 {
 	ft_check_for_outsiders(tab);
 	ft_check_lines_of_map(tab);//cheack size of lines
-	ft_check_borders(tab);    //check borders
+	ft_check_borders(tab);//check borders
    	// ft_collectb(tab,t); // at least one exit , one p,at least one c
-  	ft_check_player(tab,t);
+  	ft_check_player(tab, t);
 }
