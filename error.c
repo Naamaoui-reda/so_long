@@ -81,21 +81,23 @@ void	ft_check_player(char **tab, t_map *ma)
 				tmp++;
 				init_position(ma, i, j, tab);
 			}
-			else if (tab[i][j] == 'C')
-				ma->collectible++;
-			else if (tab[i][j] == 'E')
-				ma->ex = true;
+			check_type(tab[i][j], ma);
 			j++;
 		}
 		i++;
 	}
 	if (tmp != 1)
-	{
 		write_err_lent(tab, 3);
-	}
 }
 
-// void	ft_collectb(char **tab,t_map *ma)
+void	check_type(char c, t_map *ma)
+{
+	if (c == 'C')
+		ma->collectible++;
+	else if (c == 'E')
+		ma->ex = true;
+}
+/*// void	ft_collectb(char **tab,t_map *ma)
 // {	
 // 	int i;
 // 	int j;
@@ -117,7 +119,7 @@ void	ft_check_player(char **tab, t_map *ma)
 // 		}
 // 		i++;
 // 	}
-// }
+// }*/
 
 void	init_position(t_map *map, int i, int j, char **tab)
 {
@@ -125,13 +127,4 @@ void	init_position(t_map *map, int i, int j, char **tab)
 	map->size_of_map_v = ft_strlen_map(tab[0]);
 	(map->position).x = j;
 	(map->position).y = i;
-}
-
-void	ft_check(char **tab, t_map *t)
-{
-	ft_check_for_outsiders(tab);
-	ft_check_lines_of_map(tab);//cheack size of lines
-	ft_check_borders(tab);//check borders
-   	// ft_collectb(tab,t); // at least one exit , one p,at least one c
-  	ft_check_player(tab, t);
 }

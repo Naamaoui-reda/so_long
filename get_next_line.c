@@ -14,6 +14,14 @@
 
 #define BUFFER_SIZE 1
 
+static void	free_line(char **line, char *buff)
+{
+	free (buff);
+	free (*line);
+	*line = NULL;
+	return ;
+}
+
 static void	ft_get_line(int fd, char **line)
 {
 	int		bytes;
@@ -30,12 +38,7 @@ static void	ft_get_line(int fd, char **line)
 	{
 		bytes = read (fd, buff, BUFFER_SIZE);
 		if (bytes == -1)
-		{
-			free (buff);
-			free (*line);
-			*line = NULL;
-			return ;
-		}
+			free_line(line, buff);
 		buff [bytes] = '\0';
 		tmp = *line;
 		*line = ft_strjoin (tmp, buff);

@@ -32,7 +32,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 FLAGS	=	-Wall -Werror -Wextra
 
-CC	=	gcc
+CC	=	cc
 
 all	:   $(NAME)
 

@@ -12,15 +12,15 @@
 
 #include "main.h"
 
-char **ft_read(int fd)
+char	**ft_read(int fd)
 {
-	char    **tab;
-	int     i;
+	char	**tab;
+	int		i;
 
 	if (fd < 0)
 		perror_exit(1);
 	i = 0;
-	tab = (char **)malloc(sizeof (char*));
+	tab = (char **)malloc(sizeof (char *));
 	if (!tab)
 	{
 		perror("Allocation failed");

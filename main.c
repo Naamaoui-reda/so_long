@@ -76,7 +76,7 @@ int main()
 		return (1);
 	
 	ft_check(s,&ta);
-	t = print_map(s);
+	//t = print_map(s);
 	if(init_mlx(&mlx_struct, ta.size_of_map_v*SIZE,ta.size_of_map_h*SIZE,"test"))
 		exit(0); // to_do free map
 	 data.m= mlx_struct;
