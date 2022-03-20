@@ -39,35 +39,36 @@ typedef struct s_mlx
 	t_mlx_win	win_ptr;
 }t_mlx;
 
+typedef struct s_player
+{
+	int		p_x;
+	int		p_y;
+    int     moves;
+}t_player;
+
 typedef struct s_assests
 {
 	t_mlx	data;
 	t_img	player;
-	int		p_x;
-	int		p_y;
 	t_img	exit;
 	t_img	groud;
 	t_img	wall;
 	t_img	collect;
 	t_mlx	m;
+    t_player    s_player;
 }t_assests;
 
 typedef struct s_data
 {
 	t_assests	a;
 }t_data;
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}t_point;
 
 typedef struct s_map
 {
 	int		collectible;
 	int		size_of_map_v;
 	int		size_of_map_h;
-	t_point	position;
+	t_player	player;
 	bool	ex;
 }t_map;
 
