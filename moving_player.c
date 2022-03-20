@@ -24,4 +24,5 @@ static int	player_move(char **map, t_player *p, int move, int *collect)
 	int	curr_y;
 	int	hit_wall;
 	
+    
 }

@@ -18,5 +18,5 @@ int	ft_hit_wall(char **map, t_map *p, int move)
 	}
 	if (map[y][x] == '1')
 		return (1);
-	
+	if (map[])
 }
