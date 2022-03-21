@@ -125,6 +125,6 @@ void	init_position(t_map *map, int i, int j, char **tab)
 {
 	map->size_of_map_h = ft_tab_size(tab);
 	map->size_of_map_v = ft_strlen_map(tab[0]);
-	(map->position).x = j;
-	(map->position).y = i;
+	(map->player).p_x = j;
+	(map->player).p_y = i;
 }

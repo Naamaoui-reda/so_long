@@ -62,8 +62,8 @@ int main()
 	ta.collectible  = 0;
 	ta.size_of_map_h = 0;
 	ta.size_of_map_v = 0;
-	ta.position.x = 0;
-	ta.position.y = 0;
+	ta.player.p_x = 0;
+	ta.player.p_y = 0;
 	ta.collectible = 0;
 	ta.size_of_map_h = 0;
 	ta.size_of_map_v=0;
@@ -77,14 +77,14 @@ int main()
 	
 	ft_check(s,&ta);
 	//t = print_map(s);
-	if(init_mlx(&mlx_struct, ta.size_of_map_v*SIZE,ta.size_of_map_h*SIZE,"test"))
+	if(init_mlx(ta.assests.m.mlx_ptr, ta.size_of_map_v*SIZE,ta.size_of_map_h*SIZE,"test"))
 		exit(0); // to_do free map
 	 data.m= mlx_struct;
 	printf ("init a\n");
 	init_assests(&data);
-//    mlx_key_hook (mlx_struct.win_ptr, key_hook, &data);
 	   printf ("init d\n");
 	ft_draw_map(data, s);
-	mlx_loop (mlx_struct.mlx_ptr);
+    
+	mlx_loop (ta.assests.m.mlx_ptr);
 	
 } 
