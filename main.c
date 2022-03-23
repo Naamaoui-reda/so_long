@@ -48,43 +48,51 @@
 //     }
 //     return (0);
 // }
+int	loop_hook(void *param)
+{
+	t_map	*map;
+
+	map = (t_map *)param;
+	ft_draw_map(map->assests,map->map);
+	return (0);
+}
 
 int main()
 {
 	//int x;
 	//int y;
 	int fd;
-	char **s;
-	t_mlx mlx_struct;
-	t_assests data;
-	t_map   ta;
+	t_map   map;
 	
-	ta.collectible  = 0;
-	ta.size_of_map_h = 0;
-	ta.size_of_map_v = 0;
-	ta.player.p_x = 0;
-	ta.player.p_y = 0;
-	ta.collectible = 0;
-	ta.size_of_map_h = 0;
-	ta.size_of_map_v=0;
+	map.collectible  = 0;
+	map.size_of_map_h = 0;
+	map.size_of_map_v = 0;
+	map.player.p_x = 0;
+	map.player.p_y = 0;
+	map.collectible = 0;
+	map.size_of_map_h = 0;
+	map.size_of_map_v=0;
 	//t_assests info;
 	//int *t;
 
 	fd = open("map.ber",O_RDONLY);
-	s = ft_read(fd);
-	if (s == NULL)
+	map.map = ft_read(fd);
+	if (map.map == NULL)
 		return (1);
-	
-	ft_check(s,&ta);
+	ft_check(map.map,&map);
 	//t = print_map(s);
-	if(init_mlx(ta.assests.m.mlx_ptr, ta.size_of_map_v*SIZE,ta.size_of_map_h*SIZE,"test"))
+	t_mlx   *tmp;
+	tmp = &(map.assests.m);
+	puts("here");
+	if(init_mlx(tmp,map.size_of_map_v * SIZE,map.size_of_map_h * SIZE,"so_long"))
 		exit(0); // to_do free map
-	 data.m= mlx_struct;
 	printf ("init a\n");
-	init_assests(&data);
-	   printf ("init d\n");
-	ft_draw_map(data, s);
-    
-	mlx_loop (ta.assests.m.mlx_ptr);
+	init_assests(&map.assests);
+	printf ("init d\n");
+	ft_draw_map(map.assests, map.map);
+	puts("here");
+	movement(&map);
+	mlx_loop_hook(map.assests.m.mlx_ptr,loop_hook, &map);
+	mlx_loop (map.assests.m.mlx_ptr);
 	
 } 

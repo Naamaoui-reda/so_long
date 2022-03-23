@@ -48,7 +48,6 @@ typedef struct s_player
 
 typedef struct s_assests
 {
-	t_mlx	data;
 	t_img	player;
 	t_img	exit;
 	t_img	groud;
@@ -106,7 +105,8 @@ int		init_mlx(t_mlx *m, int size_x, int size_y, char *name);
 /************ move ****************************/
 int	ft_right_left(int move);
 int	ft_up_down(int move);
-int	ft_hit_wall(char **map, t_map *p,int move);
+int	ft_hit_wall(char **map, t_map *p, int move);
 void	ft_destroy_images(t_map	map);
 int	ft_free_everything(t_map *map);
+void movement(t_map *map);
 #endif

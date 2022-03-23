@@ -8,7 +8,7 @@ static int	player_move(char **map, t_map *p, int move)
 	
 	curr_x = p->player.p_x;
 	curr_y=p->player.p_y;
-	hit_wall = ft_hit_wall(map,p);
+	hit_wall = ft_hit_wall(map,p,move);
 	if (hit_wall == 1)
 		return (0);
 	else if (hit_wall == 2)
@@ -25,7 +25,7 @@ static int	key_hook(int keycode, void *param)
 {
 	t_map  *data;
 
-	data = (t_data *)param;
+	data = (t_map *)param;
 	if (keycode == ESC)
 		//function to free all var;
 	if (keycode != ESC && keycode != W && keycode != A && keycode != S && keycode != D)
@@ -37,6 +37,7 @@ static int	key_hook(int keycode, void *param)
 
 void movement(t_map *map)
 {
-	mlw_hook (map->assests.m.win_ptr, 2, 1L << 0, key_hook, map);
-	
+	mlx_hook (map->assests.m.win_ptr, 2, 1L << 0, key_hook, map);
+	mlx_hook (map->assests.m.win_ptr, 17, 1L << 0, ft_free_everything, map);
+
 }

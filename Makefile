@@ -27,8 +27,7 @@ LIBFT = libft/libft.a
 
 MAKE_LIBFT = libft/
 
-SRC = utils1.c init_mlx.c get_next_line.c parse.c ft_strlen_map.c error.c draw_utils.c draw.c check_map.c
-
+SRC = utils1.c init_mlx.c get_next_line.c parse.c ft_strlen_map.c error.c draw_utils.c draw.c check_map.c moving_player.c hit_wall.c free_everything.c
 
 SRC_OBJ = ${SRC:%c=%o} 
 

@@ -14,7 +14,7 @@
 
 int	init_mlx(t_mlx *m, int size_x, int size_y, char *name)
 {
-	if (size_x <= 0 || size_y <= 0 || name == NULL || *name == '\0')
+    if (size_x <= 0 || size_y <= 0 || name == NULL || *name == '\0')
 		return (1);
 	m->mlx_ptr = mlx_init ();
 	if (m->mlx_ptr == NULL)
@@ -34,7 +34,7 @@ void	init_assests(t_assests *info)
 	int		y;
 	void	*mlx_ptr;
 
-	mlx_ptr = info->m.mlx_ptr;
+	mlx_ptr = (info->m).mlx_ptr;
 	info->collect = mlx_xpm_file_to_image(mlx_ptr, "./xpm/coll.xpm", &x, &y);
 	info->groud = mlx_xpm_file_to_image(mlx_ptr, "./xpm/back.xpm", &x, &y);
 	info->player = mlx_xpm_file_to_image(mlx_ptr, "./xpm/player.xpm", &x, &y);
