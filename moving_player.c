@@ -27,7 +27,7 @@ static int	key_hook(int keycode, void *param)
 
 	data = (t_map *)param;
 	if (keycode == ESC)
-		//function to free all var;
+		exit(0);//function to free all var;
 	if (keycode != ESC && keycode != W && keycode != A && keycode != S && keycode != D)
 		return (1);
 	if (player_move(data->map,data,keycode) == 1)
