@@ -81,6 +81,7 @@ int		ft_tab_size(char **tab);
 void	ft_check_player(char **tab, t_map *ma);
 void	ft_check_for_outsiders(char **tab);
 void	init_position(t_map *map, int i, int j, char **tab);
+void	init_vars(t_map *map);
 /******** MAP ***********************/
 char	**ft_read(int fd);
 size_t	ft_strlen_map(char *s);
