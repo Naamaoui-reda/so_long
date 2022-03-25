@@ -32,7 +32,6 @@ void	draw_collect(t_assests info, int x, int y)
 {
 	mlx_put_image_to_window(info.m.mlx_ptr, info.m.win_ptr, info.groud, x, y);
 	mlx_put_image_to_window(info.m.mlx_ptr, info.m.win_ptr, info.collect, x, y);
-    
 }
 
 void	draw_exit(t_assests info, int x, int y)

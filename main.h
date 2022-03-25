@@ -43,18 +43,18 @@ typedef struct s_player
 {
 	int		p_x;
 	int		p_y;
-    int     moves;
+	int		moves;
 }t_player;
 
 typedef struct s_assests
 {
-	t_img	player;
-	t_img	exit;
-	t_img	groud;
-	t_img	wall;
-	t_img	collect;
-	t_mlx	m;
-    t_player    s_player;
+	t_img		player;
+	t_img		exit;
+	t_img		groud;
+	t_img		wall;
+	t_img		collect;
+	t_mlx		m;
+	t_player	s_player;
 }t_assests;
 
 typedef struct s_data
@@ -64,13 +64,13 @@ typedef struct s_data
 
 typedef struct s_map
 {
-    char    **map;
-	int		collectible;
-	int		size_of_map_v;
-	int		size_of_map_h;
+	char		**map;
+	int			collectible;
+	int			size_of_map_v;
+	int			size_of_map_h;
 	t_player	player;
-	bool	ex;
-    t_assests   assests;
+	bool		ex;
+	t_assests	assests;
 }t_map;
 
 /********* UTILS *****************************/
@@ -104,10 +104,10 @@ void	init_assests(t_assests *info);
 int		init_mlx(t_mlx *m, int size_x, int size_y, char *name);
 
 /************ move ****************************/
-int	ft_right_left(int move);
-int	ft_up_down(int move);
-int	ft_hit_wall(char **map, t_map *p, int move);
+int		ft_right_left(int move);
+int		ft_up_down(int move);
+int		ft_hit_wall(char **map, t_map *p, int move);
 void	ft_destroy_images(t_map	map);
-int	ft_free_everything(t_map *map);
-void movement(t_map *map);
+int		ft_free_everything(t_map *map);
+void	movement(t_map *map);
 #endif

@@ -35,16 +35,16 @@ void	init_assests(t_assests *info)
 	void	*mlx_ptr;
 
 	mlx_ptr = (info->m).mlx_ptr;
-	info->collect = mlx_xpm_file_to_image(mlx_ptr, "./xpm/coll.xpm", &x, &y);
+	info->collect = mlx_xpm_file_to_image(mlx_ptr, "./xpm/c2.xpm", &x, &y);
 	info->groud = mlx_xpm_file_to_image(mlx_ptr, "./xpm/back.xpm", &x, &y);
-	info->player = mlx_xpm_file_to_image(mlx_ptr, "./xpm/player.xpm", &x, &y);
+	info->player = mlx_xpm_file_to_image(mlx_ptr, "./xpm/t.xpm", &x, &y);
 	info->wall = mlx_xpm_file_to_image(mlx_ptr, "./xpm/wall.xpm", &x, &y);
 	info->exit = mlx_xpm_file_to_image(mlx_ptr, "./xpm/exit.xpm", &x, &y);
 }
 
 void	init_vars(t_map *map)
 {
-	map->collectible  = 0;
+	map->collectible = 0;
 	map->size_of_map_h = 0;
 	map->size_of_map_v = 0;
 	map->player.p_x = 0;
@@ -52,5 +52,5 @@ void	init_vars(t_map *map)
 	map->player.moves = 0;
 	map->collectible = 0;
 	map->size_of_map_h = 0;
-	map->size_of_map_v=0;
+	map->size_of_map_v = 0;
 }
