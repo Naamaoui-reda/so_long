@@ -35,9 +35,9 @@ void	init_assests(t_assests *info)
 	void	*mlx_ptr;
 
 	mlx_ptr = (info->m).mlx_ptr;
-	info->collect = mlx_xpm_file_to_image(mlx_ptr, "./xpm/c2.xpm", &x, &y);
-	info->groud = mlx_xpm_file_to_image(mlx_ptr, "./xpm/back.xpm", &x, &y);
-	info->player = mlx_xpm_file_to_image(mlx_ptr, "./xpm/t.xpm", &x, &y);
+	info->collect = mlx_xpm_file_to_image(mlx_ptr, "./xpm/collect.xpm", &x, &y);
+	info->groud = mlx_xpm_file_to_image(mlx_ptr, "./xpm/ground.xpm", &x, &y);
+	info->player = mlx_xpm_file_to_image(mlx_ptr, "./xpm/player.xpm", &x, &y);
 	info->wall = mlx_xpm_file_to_image(mlx_ptr, "./xpm/wall.xpm", &x, &y);
 	info->exit = mlx_xpm_file_to_image(mlx_ptr, "./xpm/exit.xpm", &x, &y);
 }
