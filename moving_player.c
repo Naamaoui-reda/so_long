@@ -44,13 +44,17 @@ static int	key_hook(int keycode, void *param)
 	if (keycode == ESC)
 	{
 		ft_free_everything(data);
+		write (1, "you pressed ESC", 15);
 		exit(0);
 	}
 	if (keycode != ESC && keycode != W && keycode != A && keycode != S
 		&& keycode != D)
 		return (1);
 	if (player_move(data->map, data, keycode) == 1)
+	{
 		ft_free_everything(data);
+		exit (0);
+	}
 	return (0);
 }
 

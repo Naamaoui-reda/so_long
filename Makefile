@@ -31,7 +31,6 @@ SRC = utils1.c init_mlx.c get_next_line.c parse.c ft_strlen_map.c error.c draw_u
 
 SRC_OBJ = ${SRC:%c=%o} 
 
-#BONUS_OBJ = ${BONUS_SRC:%.c=%.o}
 
 CC = cc
 
@@ -47,8 +46,6 @@ ${LIBFT} :
 ${NAME} : ${NAME_OBJ} ${SRC_OBJ} ${LIBFT}
 	${CC} ${FLAGS} ${MLX_FLAGS} $^ -o ${NAME}
 
-#bonus : ${BONUS_OBJ} ${SRC_OBJ} ${LIBFT}
-   # ${CC} ${FLAGS} $^ -o ${BONUS}
 
 %.o : %.c ${HEADER}
 	${CC} ${FLAGS} -c $<

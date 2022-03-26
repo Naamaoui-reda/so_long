@@ -27,11 +27,13 @@ int	main(int ac, char **av)
 	t_map	map;
 	t_mlx	*tmp;
 
-	ft_test(ac, av);
-	fd = open(av[1], O_RDONLY);
+	fd = ft_test(ac, av);
 	map.map = ft_read(fd);
 	if (map.map == NULL)
-		return (1);
+	{
+		ft_free_everything(&map);
+		exit (1);
+	}
 	init_vars(&map);
 	ft_check(map.map, &map);
 	tmp = &(map.assests.m);

@@ -28,7 +28,6 @@ void	ft_destroy_images(t_map	map)
 	while (map.size_of_map_h--)
 		free(map.map[map.size_of_map_h]);
 	free (tmp_map);
-	exit (1);
 }
 
 int	ft_free_everything(t_map *map)

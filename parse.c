@@ -36,8 +36,10 @@ char	**ft_read(int fd)
 	return (NULL);
 }
 
-void	ft_test(int ac, char **av)
+int	ft_test(int ac, char **av)
 {
+	int	fd;
+
 	if (ac != 2)
 	{
 		write(2, "Error:\nToo few arguments\n", 25);
@@ -48,4 +50,6 @@ void	ft_test(int ac, char **av)
 		write(2, "Error:\nThe map should be under the format *.ber\n", 48);
 		exit(1);
 	}
+	fd = open (av[1], O_RDONLY);
+	return (fd);
 }

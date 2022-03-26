@@ -74,7 +74,7 @@ typedef struct s_map
 }t_map;
 
 /********* UTILS *****************************/
-void	ft_test(int ac, char **av);
+int		ft_test(int ac, char **av);
 void	perror_exit(unsigned int err);
 char	*get_next_line(int fd);
 char	**ft_realloc(char **tab, size_t new_size);
