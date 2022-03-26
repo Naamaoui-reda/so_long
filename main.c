@@ -27,6 +27,7 @@ int	main(int ac, char **av)
 	t_map	map;
 	t_mlx	*tmp;
 
+	ft_test(ac, av);
 	fd = open(av[1], O_RDONLY);
 	map.map = ft_read(fd);
 	if (map.map == NULL)

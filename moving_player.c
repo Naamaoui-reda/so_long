@@ -29,7 +29,10 @@ static int	player_move(char **map, t_map *p, int move)
 	p->player.p_y += ft_up_down(move);
 	map[curr_y][curr_x] = '0';
 	map[p->player.p_y][p->player.p_x] = 'P';
-	printf("moves : %d\n", ++(((*p).player).moves));
+	++(((*p).player).moves);
+	write(1, "moves : ", 8);
+	ft_putnbr_fd((*p).player.moves, 1);
+	write(1, "\n", 1);
 	return (0);
 }
 

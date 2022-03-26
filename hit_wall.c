@@ -41,7 +41,7 @@ int	ft_hit_wall(char **map, t_map *p, int move)
 	{
 		if (p->collectible == 0)
 		{
-			write (1, "WIN", 3);
+			write (1, "WIN\n", 4);
 			return (2);
 		}
 		return (1);

@@ -34,7 +34,6 @@ void	ft_check_lines_of_map(char **tab)
 		free_map(tab);
 		exit(1);
 	}
-	printf("success\n");
 }
 
 void	ft_check_borders(char **tab)

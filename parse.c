@@ -35,3 +35,17 @@ char	**ft_read(int fd)
 	}
 	return (NULL);
 }
+
+void	ft_test(int ac, char **av)
+{
+	if (ac != 2)
+	{
+		write(2, "Error:\nToo few arguments\n", 25);
+		exit (1);
+	}
+	if (ft_strncmp(".ber", av[1] + (ft_strlen(av[1]) - 4), 4))
+	{
+		write(2, "Error:\nThe map should be under the format *.ber\n", 48);
+		exit(1);
+	}
+}
