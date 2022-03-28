@@ -40,7 +40,7 @@ MLX_FLAGS =  -lmlx -framework OpenGL -framework AppKit
 
 all : ${NAME}
 
-${LIBFT} :
+${LIBFT} : libft/libft.h
 	make -C ${MAKE_LIBFT}
 
 ${NAME} : ${NAME_OBJ} ${SRC_OBJ} ${LIBFT}

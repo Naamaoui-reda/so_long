@@ -57,11 +57,6 @@ typedef struct s_assests
 	t_player	s_player;
 }t_assests;
 
-typedef struct s_data
-{
-	t_assests	a;
-}t_data;
-
 typedef struct s_map
 {
 	char		**map;
@@ -92,6 +87,7 @@ void	ft_check(char **tab, t_map *t);
 void	free_map(char **tab);
 void	write_err_lent(char **tab, int i);
 void	check_type(char c, t_map *ma);
+void	ft_coll_ex(t_map map);
 /************   DRAW	*************/
 void	draw_ground(t_assests info, int x, int y);
 void	draw_wall(t_assests info, int x, int y);

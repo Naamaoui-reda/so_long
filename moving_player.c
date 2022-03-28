@@ -60,6 +60,6 @@ static int	key_hook(int keycode, void *param)
 
 void	movement(t_map *map)
 {
-	mlx_hook (map->assests.m.win_ptr, 2, 1L << 0, key_hook, map);
-	mlx_hook (map->assests.m.win_ptr, 17, 1L << 0, ft_free_everything, map);
+	mlx_hook (map->assests.m.win_ptr, 2, 0, key_hook, map);
+	mlx_hook (map->assests.m.win_ptr, 17, 0, ft_free_everything, map);
 }

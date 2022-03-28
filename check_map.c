@@ -12,12 +12,30 @@
 
 #include"main.h"
 
+void	ft_coll_ex(t_map map)
+{
+	if (map.ex != true)
+	{
+		write(2,
+			"Error :\nThere is no exite, the map need at least one exit\n", 58);
+		exit (1);
+	}
+	if (map.collectible == 0)
+	{
+		write(2, "Error :\n", 8);
+		write(2, "There is no collectible, ", 25);
+		write(2, "the map need at least one collectible\n", 38);
+		exit(1);
+	}
+}
+
 void	ft_check(char **tab, t_map *t)
 {
 	ft_check_lines_of_map(tab);
 	ft_check_for_outsiders(tab);
 	ft_check_borders(tab);
 	ft_check_player(tab, t);
+	ft_coll_ex(*t);
 }
 
 void	write_err_lent(char **tab, int i)
