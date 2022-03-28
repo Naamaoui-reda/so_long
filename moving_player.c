@@ -44,7 +44,7 @@ static int	key_hook(int keycode, void *param)
 	if (keycode == ESC)
 	{
 		ft_free_everything(data);
-		write (1, "you pressed ESC", 15);
+		write (1, "You pressed ESC\n", 16);
 		exit(0);
 	}
 	if (keycode != ESC && keycode != W && keycode != A && keycode != S

@@ -37,13 +37,13 @@ CC	=	cc
 all	:   $(NAME)
 
 $(NAME)	:	$(OBJS) $(HEAD)
-	ar rcs	$@	$^
+	@ar rcs	$@	$^
 
 bonus:	$(OBJS) $(OBJS_BONUS) $(HEAD)
-	ar rcs  $@ $^
+	@ar rcs  $@ $^
 
 %.o	:	%.c
-	$(CC) $(FLAGS) -c $<
+	@$(CC) $(FLAGS) -c $<
 
 clean:
 	rm -f $(OBJS) $(OBJS_BONUS)
